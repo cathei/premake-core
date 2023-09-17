@@ -675,7 +675,7 @@
 			end,
 			touch = function(v)
 				v = path.translate(path.normalize(v))
-				return string.format("type nul >> %s && copy /b %s+,, %s", v, v, v)
+				return "for %%f in (" .. v .. ") do type nul >> %%f && copy /b %%f+,, %%f"
 			end,
 		}
 	}
